@@ -1,23 +1,23 @@
-import java.util.Scanner;
+
 public class AverageNumber 
 {
     public static void main(String[]args)
 	{
-		Scanner keyboard = new Scanner(System.in);
+		
         int[] numbers = new int[10];
-        for (int i = 0; i <= 9; i++)
+        for (int i = 0; i < numbers.length; i++)
 		{
-            System.out.print("Enter number #" + (i + 1) + "::");
-            numbers[i] = keyboard.nextInt();
+           
+            numbers[i] = (int)(Math.random() * 100) +1;
         }
 
-        System.out.print("Numbers:: ");
+        System.out.print("Numbers: ");
         for (int number: numbers)
 		{
             System.out.print(number + " ");
         }
 
-        System.out.println("\nThe average of the numbers is:: " + average(numbers));
+        System.out.println("\nThe average of the numbers is: " + average(numbers));
     }
 
     public static int average(int[] numbers)
