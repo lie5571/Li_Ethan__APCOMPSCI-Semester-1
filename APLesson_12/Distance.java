@@ -13,18 +13,19 @@ public class Distance
     }
     public Distance(int x_1, int y_1, int x_2, int y_2) 
 	{
-        x1 = m_x;
-        y1 = m_y;
-        x2 = m_z;
-        y2 = m_xy;
+        x1 = x_1;
+        y1 = y_1;
+        x2 = x_2;
+        y2 = y_2;
         dist = 0;
     }
-    public void setVars(int m_x, int m_y, int m_z, int m_xy) 
+    public void setVars(int x_1, int y_1, int x_2, int y_2) 
 	{
-        x1 = m_x;
-        y1 = m_y;
-        x2 = m_z;
-        y2 = m_xy;
+        x1 = x_1;
+        y1 = y_1;
+        x2 = x_2;
+        y2 = y_2;
+        dist = 0;
     }
     public double getDist() 
 	{

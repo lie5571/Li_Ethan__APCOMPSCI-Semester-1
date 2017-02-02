@@ -16,7 +16,7 @@ public class DistanceRunner
         Distance points = new Distance(x1, y1, x2, y2);
         System.out.println("Distance between (" + x1 + "," + y1 + ") and (" + x2 + "," + y2 + "):: " + points.getDist());
         points.setVars(0,0,2,2);
-        System.out.println("Distance between (" + x1 + "," + y1 + ") and (" + x2 + "," + y2 + "):: " + points.getDist());
+        System.out.println("Distance between (" + x1 + "," + y1 + ") and (2,2):: " + points.getDist());
 
     }
 }
