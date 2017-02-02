@@ -11,7 +11,7 @@ public class EX_04
 		System.out.println("Enter the height in inches: ");
 		double h = kb.nextDouble();
 		
-		System.out.println("Enter the length in inches: "):
+		System.out.println("Enter the length in inches: ");
 		double l = kb.nextDouble();
 		
 		System.out.println("Enter the width in inches: ");
@@ -20,11 +20,9 @@ public class EX_04
 		System.out.printf("Your volume in cubic feet is %.5f" , form.volume(h,l,w));
 	}
 	
-	public double volume
+	public double volume(double h, double l, double w)
 	{
-		h=h/12;
-		l=l/12;
-		w=w/12;
-		return (h*l*w);
+
+		return (h*l*w)/1728;
 	}
 }
