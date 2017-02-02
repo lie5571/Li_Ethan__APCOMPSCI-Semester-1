@@ -63,8 +63,11 @@ public class GameGun
 	{
 		if (bulletCount >= CLIPSIZE) 
 		{ 
-			bulletCount -= shotCount;
+
+	        bulletCount -= CLIPSIZE;
+
 			shotCount = CLIPSIZE; 
+			
 		}
 		else 
 		{ 
