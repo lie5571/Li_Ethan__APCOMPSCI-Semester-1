@@ -2,17 +2,16 @@ import java.util.*;
 public class GameGun 
 {
 	static int CLIPSIZE = 16;
-	static int bulletCount = 96;
-	static int shotCount = CLIPSIZE;
+	static int bulletCount;
+	static int shotCount;
 	static String[] clip = new String[CLIPSIZE];
 	
 	public static void main(String[]args) 
 	{
+		shotCount = 0;
+		bulletCount = 96;
 		Scanner keyboard = new Scanner(System.in);
-		for (int i=0; i<clip.length; i++) 
-		{
-			clip[i] = " * "; 
-		}
+		resetClip();
 		
 		while (bulletCount > 0 || shotCount > 0) 
 		{
@@ -43,7 +42,7 @@ public class GameGun
 	{
 		for (int i=0; i<clip.length; i++) 
 		{ 
-			clip[i] = " * "; 
+			clip[i] = " [] "; 
 		}
 	}
 	
@@ -53,7 +52,6 @@ public class GameGun
 		{
 			clip[shotCount - 1] = "[]";
 			shotCount--;
-			bulletCount--;
 			System.out.println("BOOM");
 		}
 		else 
@@ -65,13 +63,19 @@ public class GameGun
 	{
 		if (bulletCount >= CLIPSIZE) 
 		{ 
+			bulletCount -= shotCount;
 			shotCount = CLIPSIZE; 
 		}
 		else 
 		{ 
 			shotCount = bulletCount; bulletCount = 0; 
 		}
+		
 		resetClip();
+		for (int i = 0; i < shotCount; i++)
+		{
+			clip[i] = " * ";
+		}
 	}
 	public static void printClip() 
 	{
