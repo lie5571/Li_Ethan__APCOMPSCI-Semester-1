@@ -31,7 +31,7 @@ public class Human
         return eyes;
     }
 
-    public void setEyes(String h)
+    public void setEyes(String e)
 	{
         eyes = e;
     }
