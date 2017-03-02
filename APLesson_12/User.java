@@ -33,8 +33,8 @@ public class User
         String av = kb.nextLine();
         if(av.equalsIgnoreCase("yes")) 
 		{
-            System.out.println("Enter the avatar:");
             String a = kb.nextLine();
+            System.out.println("Enter the avatar:");
             User user = new User(f, l, a);
             System.out.println(user.toString());
         }
