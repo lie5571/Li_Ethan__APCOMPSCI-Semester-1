@@ -22,7 +22,7 @@ public class Magpie2
 		 * 	enter. Think to yourself: "What is the length of
 		 * 	an empty String?" */
 		
-		if (statement.length() == 0)
+		if (statement.length() == 0 )
 		{
 			response = "Say something, please";
 		}
@@ -31,7 +31,7 @@ public class Magpie2
 		/** To be completed in Exercise_02:
 		 * 	Modify the following code to use the findKeyword
 		 * 	Method (details in "Exercise_02" below. */
-		if (findKeyword(statement, "no", 0) >= 0)
+		else if (findKeyword(statement, "no", 0) >= 0)
 		{
 			response = "Why so negative?";
 		}
@@ -67,8 +67,6 @@ public class Magpie2
 		{
 			response = "He sounds like a pretty dank teacher.";
 		}	
-				
-
 		else
 		{
 			response = getRandomResponse();
@@ -92,7 +90,7 @@ public class Magpie2
 			{
 				before = phrase.substring(psn - 1, psn);
 			}
-			if(goal.length() + psn <= phrase.length())
+			if(goal.length() + psn < phrase.length())
 			{
 				after = phrase.substring(psn + goal.length(), psn + goal.length() + 1);
 			}
@@ -103,6 +101,7 @@ public class Magpie2
 			else 
 			{
 				psn = phrase.indexOf(goal, psn + 1);
+				return psn;
 			}
 		}
 	    else
