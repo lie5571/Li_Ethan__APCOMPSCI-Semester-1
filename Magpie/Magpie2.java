@@ -67,6 +67,7 @@ public class Magpie2
 	private int findKeyword(String statement, String goal, int startPos)
 	{
 		String phrase = statement.trim().toLowerCase();
+		goal = goal.toLowerCase();
 		int psn = statement.indexOf(goal, startPos);
 		
 		if(psn >= 0) 
@@ -75,7 +76,11 @@ public class Magpie2
 			{
 				before = phrase.substring(psn - 1, psn);
 			}
-			if()
+			if(goal.length() + psn <= phrase.length())
+			{
+				after = phrase.substring(psn + goal.length(), psn + goal.length() + 1);
+			}
+			if(before.compareTo("a") ||
 		}
 		
 		
