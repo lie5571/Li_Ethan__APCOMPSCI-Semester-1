@@ -31,15 +31,15 @@ public class Magpie2
 		/** To be completed in Exercise_02:
 		 * 	Modify the following code to use the findKeyword
 		 * 	Method (details in "Exercise_02" below. */
-		if (statement.indexOf("no") >= 0)
+		if (findKeyword(statement, "no", 0) >= 0)
 		{
 			response = "Why so negative?";
 		}
 
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
+		else if (findKeyword(statement, "mother", 0) >= 0
+				|| findKeyword(statement, "father", 0) >= 0
+				|| findKeyword(statement, "sister", 0) >= 0
+				|| findKeyword(statement, "brother", 0) >= 0)
 		{
 			response = "Tell me more about your family.";
 		}
@@ -54,6 +54,20 @@ public class Magpie2
 		 * Create addtional code (another else if) that
 		 * responds "He sounds like a pretty dank teacher"
 		 * if you mention "Robinette" in your statement */
+		 
+		else if (findKeyword(statement, "cat", 0) >= 0
+				|| findKeyword(statement, "dog", 0) >= 0
+				|| findKeyword(statement, "fish", 0) >= 0
+				|| findKeyword(statement, "turtle", 0) >= 0)
+		{
+			response = "Tell me more about your pet.";		
+		}
+			
+		else if (findKeyword(statement, "Robinette", 0)>= 0)
+		{
+			response = "He sounds like a pretty dank teacher.";
+		}	
+				
 
 		else
 		{
@@ -72,6 +86,8 @@ public class Magpie2
 		
 		if(psn >= 0) 
 		{
+			String before = "";
+			String after = "";
 			if(psn > 0)
 			{
 				before = phrase.substring(psn - 1, psn);
@@ -80,9 +96,20 @@ public class Magpie2
 			{
 				after = phrase.substring(psn + goal.length(), psn + goal.length() + 1);
 			}
-			if(before.compareTo("a") ||
+			if(((before.compareTo("a") < 0) || (before.compareTo("z")) > 0) && ((after.compareTo("a") < 0 || (after.compareTo("z") > 0))))
+    		{
+				return psn;
+			}		
+			else 
+			{
+				psn = phrase.indexOf(goal, psn + 1);
+			}
 		}
-		
+	    else
+	    {
+			return -1;
+
+		}
 		
 		/* New String variable phrase = a more searchable version of statement.
 		 	-Use a combination of trim() and toLowerCase() modify statement.
@@ -114,11 +141,7 @@ public class Magpie2
 
 				Otherwise, search for goal in phrase from psn + 1 forward */
 				
-        else
-		{
-			return -1;
-
-		}
+        
 		
 	}
 
