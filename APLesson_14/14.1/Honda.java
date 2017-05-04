@@ -4,16 +4,14 @@ public class Honda extends Car
     public Honda(double[] pos) 
 	{
         super();
-        move(pos[0], pos[1]);
+        super.move(pos[0], pos[1]);
     }
-    public void move(double x, double y) 
+    public void move(double Variable1, double Variable2) 
 	{
-        this.Variable11 += x;
-        this.Variable21 += y;
+        super.move(Variable1, Variable2);
     }
     public double[] getLoc() 
 	{
-        double[] coords = {Variable11, Variable21};
-        return coords;
+        return super.getLoc();
     }
 }
