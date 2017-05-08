@@ -102,6 +102,15 @@ public class Magpie2
 	{
 		statement = statement.trim();
 		String lastChar = statement.substring(statement.length() - 1);
+		if(lastChar.equal("."))
+		{
+			statement = statement.substring(0, statement.length() - 1);
+		}
+		
+		int psnOfYou = findKeyword(statement, "you");
+		int psnOfMe = findKeyword(statement, "me", psnOfYou + 3);
+		
+		
 	/**
 	* trim the statement
 	* Set new String lastChar to the last character in statement
