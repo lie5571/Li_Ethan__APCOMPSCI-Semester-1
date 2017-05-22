@@ -76,6 +76,7 @@ public class Magpie2
 
 	private String transformYouMeStatement(String statement)
 	{
+		
 		statement = statement.trim();
 		String lastChar = statement.substring(statement.length() - 1);
 		if(lastChar.equals("."))
